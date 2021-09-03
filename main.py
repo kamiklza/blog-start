@@ -10,11 +10,11 @@ def home():
     return render_template("index.html", all_posts=blog_posts)
 
 
-@app.route('/post/<int:num>')
-def get_post(num):
+@app.route('/post/<int:index>')
+def get_post(index):
     blog_posts = Post.get_post()
     for post in blog_posts:
-        if post['id'] == num:
+        if post['id'] == index:
             display_post = post
     return render_template('post.html', post=display_post)
 
