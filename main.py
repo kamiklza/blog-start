@@ -9,11 +9,12 @@ def home():
     blog_posts = Post.get_post()
     return render_template("index.html", all_posts=blog_posts)
 
-@app.route('/<num>')
+
+@app.route('/<int:num>')
 def get_post(num):
     blog_posts = Post.get_post()
     for post in blog_posts:
-        if str(post['id']) == num:
+        if post['id'] == num:
             display_post = post
     return render_template('post.html', post=display_post)
 
