@@ -10,7 +10,7 @@ def home():
     return render_template("index.html", all_posts=blog_posts)
 
 
-@app.route('/<int:num>')
+@app.route('/post/<int:num>')
 def get_post(num):
     blog_posts = Post.get_post()
     for post in blog_posts:
