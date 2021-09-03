@@ -14,10 +14,8 @@ def get_post(num):
     blog_posts = Post.get_post()
     for post in blog_posts:
         if str(post['id']) == num:
-            title = post['title']
-            subtitle = post['subtitle']
-            body = post['body']
-    return render_template('post.html', title=title, subtitle=subtitle, body=body)
+            display_post = post
+    return render_template('post.html', post=display_post)
 
 
 if __name__ == "__main__":
