@@ -10,6 +10,7 @@ app = Flask(__name__)
 # for post in posts:
 #     post_obj = Post(post["id"], post["title"], post["subtitle"], post["body"])
 #     post_objects.append(post_obj)
+# ---------Passing the post data into the object--------------#
 
 
 @app.route('/')
